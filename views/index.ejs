@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Manrope:wght@200..800&family=Poppins:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <%- include('partials/header') %>
+    <div class="container">
+        <span>PORTFOLIO © 2024</span>
+        <h1 class="index__fullname">Максим<br>Глухов</h1>
+        <img class="index-image-heart" src="/images/heart.png" alt="Картинка с сердцем">
+        <p class="index__description">Front-end разработчик с 3-летним опытом работы. Еще учусь, но уже кое-что умею.</p>
+        <div class="buttons_wrapper">
+            <button class="button_projects" onclick="location.href='/projects'">
+                <a href="/projects">Посмотреть проекты</a>
+            </button>
+            <button class="button_contact" onclick="location.href='/contacts'"> 
+                <img src="/images/Write.png" alt="Связаться с нами">
+            </button>
+        </div>
+    </div>
+    <div class="quotation">
+        <img class="quotation_img" src="/images/quotation_mark.svg" alt="Кавычки">
+        <div class="quotation_text">Мы довольны сайтом, получилось отлично привлечь клиентов за счет хорошей CEO оптимизации и качественного интерфейса.</div>
+        <span class="quotation_signiture">Владимир Егоров, основатель Mixtip</span>
+    </div>
+    <div class="contacts__wrapper container_without_border">
+        <div class="socials">
+            <div class="social">
+                <a href="https://vk.com/glukhov_gt" target="_blank" class="social_card_wrapper">
+                    <img class="social_card_quotation" src="/images/quotation_mark.svg" alt="Кавычки">
+                    <div class="social_card_bottom">
+                        <img class="social_card_arrow" src="/images/forward.png" alt="Стрелка">
+                        <span>Vkontate</span>
+                    </div>
+                </a>
+            </div>
+            <div class="social">
+                <a href="https://t.me/maxim_glukhov_abk" target="_blank" class="social_card_wrapper">
+                    <img class="social_card_quotation" src="/images/quotation_mark.svg" alt="Кавычки">
+                    <div class="social_card_bottom">
+                        <img class="social_card_arrow" src="/images/forward.png" alt="Стрелка">
+                        <span>Telegram</span>
+                    </div>
+                </a>
+            </div>
+            <div class="social">
+                <a href="https://wa.me/79503065151" target="_blank" class="social_card_wrapper">
+                    <img class="social_card_quotation" src="/images/quotation_mark.svg" alt="Кавычки">
+                    <div class="social_card_bottom">
+                        <img class="social_card_arrow" src="/images/forward.png" alt="Стрелка">
+                        <span>WhatsApp</span>
+                    </div>
+                </a>
+            </div>
+            <div class="social">
+                <a href="mailto:glukhov_maxim@mail.ru" class="social_card_wrapper">
+                    <img class="social_card_quotation" src="/images/quotation_mark.svg" alt="Кавычки">
+                    <div class="social_card_bottom">
+                        <img class="social_card_arrow" src="/images/forward.png" alt="Стрелка">
+                        <span>Mail</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="contact_form">
+            <span class="contacts_header">
+                Если вам нужна помощь, свяжитесь со мной любым удобным способом.
+            </span>
+            <span class="contacts_email">
+                Email
+            </span>
+            <a href="mailto:glukhov_maxim@mail.ru" class="contacts_link">
+                <img src="/images/forward.png" alt="Стрелка">
+                <span class="contacts_link_email">glukhov_maxim@mail.ru</span>
+            </a>
+            <div class="contact_form_wrapper">
+                <p>
+                    Введите свои данные
+                </p>
+                <form class="contact_inputs_wrapper" action="#">
+                    <input type="text" class="contact_form_input" placeholder="Имя">
+                    <input type="email" class="contact_form_input" placeholder="Почта">
+                    <input type="url" class="contact_form_input" placeholder="URL сайта">
+                    <input type="text" class="contact_form_input" placeholder="Ваш бюджет">
+                    <input type="text" class="contact_form_input" placeholder="Dетали проекта">
+                    <button class="contact_form_button">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+        <%- include('partials/footer') %>
+</body>
+<script>
+    window.addEventListener('scroll', function () {
+            const quotation = document.querySelector('.quotation');
+            const rect = quotation.getBoundingClientRect(); 
+
+            if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                quotation.classList.add('visible'); 
+            } else {
+                quotation.classList.remove('visible');
+            }
+        });
+</script>
+
+</html>

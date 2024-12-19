@@ -1,0 +1,21 @@
+<header>
+    <div class="header_signiture">
+        <span class="fullname">Максим Глухов</span>
+        <span>Томск</span>
+    </div>
+    <div class="burger-menu" onclick="toggleMenu()">☰</div>
+    <nav>
+        <ul>
+            <li><a class="header_nav" href="/">Главная</a></li>
+            <li><a class="header_nav" href="/projects">Проекты</a></li>
+            <li><a class="header_nav" href="/contacts">Контакты</a></li>
+        </ul>
+    </nav>
+</header>
+
+<script>
+        function toggleMenu() {
+        const header = document.querySelector('header');
+        header.classList.toggle('nav-open');
+    }   
+</script>

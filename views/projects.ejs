@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <%- include('partials/header') %>
+    <div class="container_without_border">
+        <h1 class="project_h1">Проекты</h1>
+        <div class="projects-grid">
+            <% projects.forEach((project, index)=> { %>
+                <div class="project-card  <%= index === 2 ? 'full-width' : '' %>">
+                    <div class="card_header">         
+                        <a href="<%= project.link %>" target="_blank" class="hero_card_wrapper">
+                            <img class="project_link_arrow" src="/images/forward.png" alt="Стрелка для ссылки">
+                            <h2 class="project_h2">
+                                <%= project.name %>
+                            </h2>
+                        </a>
+                        <span>
+                            <%= project.year %>
+                        </span>
+                    </div>
+                    <img class="project_image" src="<%= project.image %>" alt="Изображение проекта">
+                    <div class="project-description_wrapper">
+                        <p class="project_dectiption">
+                            <%= project.description %>
+                        </p>
+                        <a class="project_link" href="<%= project.link %>" target="_blank">Подробнее</a>
+                    </div>
+                </div>
+                <% }); %>
+        </div>
+    </div>
+        <%- include('partials/footer') %>
+</body>
+
+</html>
